@@ -1,0 +1,42 @@
+{
+  "header": {
+    "cart": "Sepet",
+    "searchBy": "Arama",
+    "login": "Giriş"
+  },
+  "footer": {
+    "about": "Hakkında",
+    "aboutUs": "Hakkımızda",
+    "ourBranches": "Şubelerimiz",
+    "changelog": "Değişiklikler",
+    "quickLinks": "Hızlı Bağlantılar",
+    "faqs": "SSS",
+    "recipes": "Tarifler",
+    "contactUs": "Bize Ulaşın",
+    "helpSupport": "Yardım & Destek",
+    "termsOfService": "Hizmet Şartları",
+    "privacyPolicy": "Gizlilik Politikası",
+    "security": "Güvenlik",
+    "company": "Şirket",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "social": "Sosyal",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "copyright": "Tüm hakları saklıdır © {{year}} {{company}}"
+  },
+  "pageLoader": {
+    "loading": "Yükleniyor..."
+  },
+  "pageError": {
+    "title": "Bir şeyler yanlış gitti",
+    "description": "Üzgünüz – beklenmeyen bir hata oluştu. Lütfen sayfayı yenilemeyi deneyin veya daha sonra tekrar gelin.",
+    "reload": "Tekrar dene"
+  },
+  "notFound": {
+    "title": "Sayfa Bulunamadı",
+    "description": "Aradığınız sayfa mevcut değil. Tekrar aramayı deneyebilir veya aşağıdaki geri dön butonunu kullanabilirsiniz.",
+    "goBack": "Geri Dön"
+  }
+}
