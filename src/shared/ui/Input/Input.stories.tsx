@@ -23,7 +23,7 @@ export const Default: Story = {
   },
 };
 
-export const withValue: Story = {
+export const WithValue: Story = {
   args: {
     value: "Some text",
   },
