@@ -1,0 +1,70 @@
+import { useState } from "react";
+import { PhoneInput as ReactPhoneInput } from "react-international-phone";
+
+import { cn } from "@/shared/lib";
+
+import type { InputProps } from "../Input";
+import styles from "../Input.module.scss";
+import "react-international-phone/style.css";
+
+export const PhoneInput = (props: InputProps) => {
+  const [focus, setFocus] = useState<boolean>(false);
+
+  const {
+    className,
+    value,
+    onChange,
+    rounded = false,
+    disabled = false,
+    error = false,
+    label,
+    ...rest
+  } = props;
+
+  const handleChange = (phone: string) => {
+    onChange?.(phone);
+  };
+
+  const handleFocus = () => {
+    setFocus(true);
+  };
+
+  const handleBlur = () => {
+    setFocus(false);
+  };
+
+  return (
+    <>
+      {label && (
+        <label
+          className={cn(styles.label, {
+            [styles.error]: error,
+          })}
+        >
+          {label}
+        </label>
+      )}
+      <ReactPhoneInput
+        inputProps={{ ...rest }}
+        defaultCountry="us"
+        forceDialCode
+        disableCountryGuess
+        value={value}
+        disabled={disabled}
+        onChange={handleChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        inputClassName={cn(styles.input, {
+          [styles.disabled]: disabled,
+          [styles.error]: error,
+        })}
+        className={cn(styles.inputContainer, className, {
+          [styles.rounded]: rounded,
+          [styles.disabled]: disabled,
+          [styles.focus]: focus,
+          [styles.error]: error,
+        })}
+      />
+    </>
+  );
+};
