@@ -1,4 +1,5 @@
 import type { FormEvent } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 
 import ArrowRight from "@/shared/assets/icons/ArrowRight.svg?react";
@@ -14,12 +15,13 @@ import { selectLoginIsLoading } from "../../model/selectors/selectLoginIsLoading
 import { selectLoginMethod } from "../../model/selectors/selectLoginMethod/selectLoginMethod";
 import { selectLoginPassword } from "../../model/selectors/selectLoginPassword/selectLoginPassword";
 import { selectLoginPhone } from "../../model/selectors/selectLoginPhone/selectLoginPhone";
-import { login } from "../../model/services/login";
+import { login } from "../../model/services/login/login";
 import { loginActions } from "../../model/slice/loginSlice";
 
 import styles from "./LoginForm.module.scss";
 
 export const LoginForm = () => {
+  const { t } = useTranslation("auth");
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -66,11 +68,11 @@ export const LoginForm = () => {
         <Tabs.List>
           <Tabs.Trigger value={AuthMethod.EMAIL}>
             <AppIcon Icon={MailIcon} />
-            Email
+            {t("login.email")}
           </Tabs.Trigger>
           <Tabs.Trigger value={AuthMethod.PHONE}>
             <AppIcon Icon={PhoneIcon} />
-            Phone
+            {t("login.phone")}
           </Tabs.Trigger>
         </Tabs.List>
         <Tabs.Content value={AuthMethod.EMAIL}>
@@ -81,8 +83,8 @@ export const LoginForm = () => {
             type="email"
             id="email"
             className={styles.input}
-            placeholder="Enter your email"
-            label="Email"
+            placeholder={t("login.enterEmail")}
+            label={t("login.email")}
           />
         </Tabs.Content>
         <Tabs.Content value={AuthMethod.PHONE}>
@@ -93,8 +95,8 @@ export const LoginForm = () => {
             type="tel"
             id="phone"
             className={styles.input}
-            placeholder="Enter your phone number"
-            label="Phone"
+            placeholder={t("login.enterPhone")}
+            label={t("login.phone")}
           />
         </Tabs.Content>
       </Tabs>
@@ -103,8 +105,8 @@ export const LoginForm = () => {
         onChange={handleChangePassword}
         type="password"
         className={styles.input}
-        placeholder="Enter your password"
-        label="Password"
+        placeholder={t("login.enterPassword")}
+        label={t("login.password")}
       />
       {error && <div className={styles.error}>{error}</div>}
       <Button
@@ -114,7 +116,7 @@ export const LoginForm = () => {
         className={styles.button}
         size="md"
       >
-        Login <AppIcon Icon={ArrowRight} />
+        {t("login.loginButton")} <AppIcon Icon={ArrowRight} />
       </Button>
     </form>
   );

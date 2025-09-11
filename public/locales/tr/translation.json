@@ -1,8 +1,9 @@
 {
   "header": {
     "cart": "Sepet",
-    "searchBy": "Arama",
-    "login": "Giriş"
+    "searchBy": "Şuna göre ara",
+    "login": "Giriş Yap",
+    "logout": "Çıkış Yap"
   },
   "footer": {
     "about": "Hakkında",
@@ -29,14 +30,33 @@
   "pageLoader": {
     "loading": "Yükleniyor..."
   },
-  "pageError": {
-    "title": "Bir şeyler yanlış gitti",
-    "description": "Üzgünüz – beklenmeyen bir hata oluştu. Lütfen sayfayı yenilemeyi deneyin veya daha sonra tekrar gelin.",
-    "reload": "Tekrar dene"
-  },
   "notFound": {
     "title": "Sayfa Bulunamadı",
-    "description": "Aradığınız sayfa mevcut değil. Tekrar aramayı deneyebilir veya aşağıdaki geri dön butonunu kullanabilirsiniz.",
+    "description": "Aradığınız sayfa mevcut değil. Tekrar aramayı deneyin veya aşağıdaki geri dön butonunu kullanın.",
     "goBack": "Geri Dön"
+  },
+  "pageError": {
+    "title": "Bir şeyler ters gitti",
+    "description": "Üzgünüz – beklenmedik bir hata oluştu. Lütfen sayfayı yenilemeyi deneyin veya daha sonra tekrar gelin.",
+    "reload": "Tekrar Dene"
+  },
+  "errors": {
+    "CONTACT_REQUIRED": "Lütfen e-posta veya telefon giriniz",
+    "USER_NOT_FOUND": "Kullanıcı bulunamadı",
+    "USER_ALREADY_EXISTS": "Kullanıcı zaten mevcut",
+    "USER_ALREADY_VERIFIED": "Kullanıcı zaten doğrulandı",
+    "GOOGLE_USER_NO_VERIFICATION": "Google kullanıcılarının doğrulama yapmasına gerek yoktur",
+    "VERIFICATION_TOO_MANY_CODES": "Çok fazla doğrulama kodu talep edildi. Daha sonra tekrar deneyin.",
+    "GOOGLE_AUTH_FAILED": "Google kimlik doğrulaması başarısız",
+    "GOOGLE_CODE_INVALID": "Geçersiz veya süresi dolmuş Google kodu",
+    "LOGIN_USE_GOOGLE": "Bu hesap Google ile giriş kullanıyor. Lütfen Google ile devam edin.",
+    "ACCOUNT_NOT_VERIFIED": "Giriş yapmadan önce lütfen hesabınızı doğrulayın",
+    "INVALID_CREDENTIALS": "Geçersiz bilgiler",
+    "REFRESH_TOKEN_MISSING": "Yenileme tokeni eksik",
+    "REFRESH_TOKEN_INVALID": "Geçersiz yenileme tokeni",
+    "REFRESH_TOKEN_REVOKED": "Yenileme tokeni iptal edildi",
+    "REFRESH_TOKEN_EXPIRED": "Yenileme tokeni süresi doldu",
+    "REFRESH_TOKEN_MISMATCH": "Yenileme tokeni uyuşmuyor",
+    "CODE_REQUIRED": "Kod gereklidir"
   }
 }
