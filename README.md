@@ -67,3 +67,8 @@ export default tseslint.config([
   },
 ])
 ```
+
+## Backend Repository
+
+You can find the backend repository [here](https://github.com/OleksandrBazylevych1096/advanced-react-server).
+
