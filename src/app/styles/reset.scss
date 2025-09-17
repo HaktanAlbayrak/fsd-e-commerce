@@ -14,9 +14,9 @@ button {
 .react-international-phone-input-container .react-international-phone-input {
   height: auto;
   padding: 0;
-  border: none;
+  border: none !important;
   margin: 0;
-  background-color: inherit;
+  background-color: inherit !important;
   color: var(--gray-800);
   font: inherit;
 }

@@ -1,3 +1,5 @@
+import "react-international-phone/style.css";
+
 import { useState } from "react";
 import { PhoneInput as ReactPhoneInput } from "react-international-phone";
 
@@ -5,7 +7,6 @@ import { cn } from "@/shared/lib";
 
 import type { InputProps } from "../Input";
 import styles from "../Input.module.scss";
-import "react-international-phone/style.css";
 
 export const PhoneInput = (props: InputProps) => {
   const [focus, setFocus] = useState<boolean>(false);

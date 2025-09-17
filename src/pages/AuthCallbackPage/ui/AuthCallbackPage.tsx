@@ -33,11 +33,13 @@ const AuthCallbackPage = () => {
   const userData = useAppSelector(selectUserData);
 
   useEffect(() => {
-    if (!code || hasStarted.current || errorParam) return;
+    if (import.meta.env.VITE_PROJECT_ENV !== "storybook") {
+      if (!code || hasStarted.current || errorParam) return;
 
-    hasStarted.current = true;
-    dispatch(exchangeCode(code));
-  }, [code, dispatch, errorParam]);
+      hasStarted.current = true;
+      dispatch(exchangeCode(code));
+    }
+  }, [code, errorParam, dispatch]);
 
   useEffect(() => {
     if (userData && !isLoading && !authError) {

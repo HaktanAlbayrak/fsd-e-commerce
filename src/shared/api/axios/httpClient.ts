@@ -10,7 +10,7 @@ interface ExtendedAxiosRequestConfig extends AxiosRequestConfig {
 type QueueCallBack = (success: boolean, error?: AxiosError) => void;
 
 interface RefreshError extends Error {
-  isRefreshedError: true;
+  isRefreshError: true;
   originalError: AxiosError;
 }
 
@@ -40,7 +40,7 @@ const flushQueue = (error: AxiosError | null, success: boolean) => {
 
 const createRefreshError = (originalError: AxiosError): RefreshError => {
   const refreshError = new Error("Token refresh failed") as RefreshError;
-  refreshError.isRefreshedError = true;
+  refreshError.isRefreshError = true;
   refreshError.originalError = originalError;
   return refreshError;
 };
@@ -162,11 +162,11 @@ export const setAuthFailureHandler = (handler: AuthFailureHandler) => {
   authFailureHandler = handler;
 };
 
-export const isRefreshingError = (error: unknown): error is RefreshError => {
+export const isRefreshError = (error: unknown): error is RefreshError => {
   return (
     typeof error === "object" &&
     error !== null &&
-    "isRefreshingError" in error &&
-    error.isRefreshingError === true
+    "isRefreshError" in error &&
+    error.isRefreshError === true
   );
 };

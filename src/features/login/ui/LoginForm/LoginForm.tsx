@@ -66,18 +66,19 @@ export const LoginForm = () => {
     <form className={styles.form} onSubmit={onSubmit}>
       <Tabs defaultValue={method} onChange={handleTabChange}>
         <Tabs.List>
-          <Tabs.Trigger value={AuthMethod.EMAIL}>
+          <Tabs.Trigger value={AuthMethod.EMAIL} data-testid="email-tab">
             <AppIcon Icon={MailIcon} />
             {t("login.email")}
           </Tabs.Trigger>
-          <Tabs.Trigger value={AuthMethod.PHONE}>
+          <Tabs.Trigger value={AuthMethod.PHONE} data-testid="phone-tab">
             <AppIcon Icon={PhoneIcon} />
             {t("login.phone")}
           </Tabs.Trigger>
         </Tabs.List>
-        <Tabs.Content value={AuthMethod.EMAIL}>
+        <Tabs.Content value={AuthMethod.EMAIL} data-testid="email-content">
           <Input
             error={!!error}
+            disabled={isLoading}
             value={email}
             onChange={handleChangeEmail}
             type="email"
@@ -85,11 +86,13 @@ export const LoginForm = () => {
             className={styles.input}
             placeholder={t("login.enterEmail")}
             label={t("login.email")}
+            data-testid="email-input"
           />
         </Tabs.Content>
-        <Tabs.Content value={AuthMethod.PHONE}>
+        <Tabs.Content value={AuthMethod.PHONE} data-testid="phone-content">
           <PhoneInput
             error={!!error}
+            disabled={isLoading}
             value={phone}
             onChange={handleChangePhone}
             type="tel"
@@ -97,6 +100,7 @@ export const LoginForm = () => {
             className={styles.input}
             placeholder={t("login.enterPhone")}
             label={t("login.phone")}
+            data-testid="phone-input"
           />
         </Tabs.Content>
       </Tabs>
@@ -107,14 +111,21 @@ export const LoginForm = () => {
         className={styles.input}
         placeholder={t("login.enterPassword")}
         label={t("login.password")}
+        data-testid="password-input"
+        disabled={isLoading}
       />
-      {error && <div className={styles.error}>{error}</div>}
+      {error && (
+        <div className={styles.error} data-testid="error-message">
+          {error}
+        </div>
+      )}
       <Button
         isLoading={isLoading}
         fullWidth
         type="submit"
         className={styles.button}
         size="md"
+        data-testid="submit-button"
       >
         {t("login.loginButton")} <AppIcon Icon={ArrowRight} />
       </Button>

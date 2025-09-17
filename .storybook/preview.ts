@@ -4,6 +4,7 @@ import "../src/app/styles/index.scss";
 import {
   LanguageDecorator,
   RouterDecorator,
+  StoreDecorator,
   ThemeDecorator,
 } from "../src/shared/config/storybook";
 
@@ -51,7 +52,12 @@ const preview: Preview = {
       test: "todo",
     },
   },
-  decorators: [ThemeDecorator, RouterDecorator, LanguageDecorator],
+  decorators: [
+    ThemeDecorator,
+    RouterDecorator,
+    LanguageDecorator,
+    StoreDecorator,
+  ],
 };
 
 export default preview;
